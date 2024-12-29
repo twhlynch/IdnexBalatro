@@ -14,4 +14,5 @@ Requires `Lovely`, but this should already be installed as part of steamodded's 
 - Legendary idnex joker
 - idnex sticker
 - idnex deck to start with idnex
+- 
 ![sprites](assets/1x/sprites.png)
