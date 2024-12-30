@@ -11,8 +11,14 @@ Requires `Lovely`, but this should already be installed as part of steamodded's 
 `git clone` or download this repo and place it in the `Mods` directory.
 
 # Features
-- Legendary idnex joker
-- idnex sticker
-- idnex deck to start with idnex
+**idnex joker**
+- Applies idnex stickers to other jokers at end of round
+- 1X mult for each idnex (sticker or joker)
+
+**idnex sticker**
+- Duplicate card end of round
+
+**idnex deck**
+- Start with idnex joker
 
 ![sprites](assets/1x/sprites.png)
