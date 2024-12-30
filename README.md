@@ -15,8 +15,7 @@ Requires `Lovely`, but this should already be installed as part of steamodded's 
 - Applies idnex stickers to other jokers at end of round
 - 1X mult for each idnex (sticker or joker)
 
-<img src="assets/idnex.png" width=100>
-<img src="assets/idnex_desc.png" width=200>
+<img src="assets/idnex.png" width=100><img src="assets/idnex_desc.png" width=200>
 
 **idnex sticker**
 - Duplicate card end of round
