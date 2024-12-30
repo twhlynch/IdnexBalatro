@@ -29,8 +29,7 @@ function SMODS.INIT.Idnex()
         loc_txt = {
             name = "idnex",
             text = {
-                "{X:mult,C:white} X#1# {} Mult for",
-                "every {C:attention}idnex sticker{}",
+                "{X:mult,C:white} X#1# {} Mult for every {C:attention}idnex{}",
                 "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult){}",
                 "{C:inactive}(Creates idnex stickers at end of round){}"
             }
@@ -54,10 +53,14 @@ function SMODS.INIT.Idnex()
         end,
         calculate = function(self, card, context)
             -- calculate x_mult
-            card.ability.current_mult = 1
+            card.ability.current_mult = 0
             for _, another_joker in ipairs(G.jokers.cards) do
-                if another_joker.ability.idnex_sticker then
-                    card.ability.current_mult = card.ability.current_mult + card.ability.base_mult
+                if another_joker.ability.idnex_sticker or another_joker.ability.is_idnex_joker then
+                    if card.ability.current_mult == 0 then
+                        card.ability.current_mult = card.ability.base_mult
+                    else    
+                        card.ability.current_mult = card.ability.current_mult + card.ability.base_mult
+                    end
                 end
             end
 
@@ -73,7 +76,7 @@ function SMODS.INIT.Idnex()
                 end
             end
 
-            -- calculate
+            -- return mult
             if context.joker_main then
                 return {
                     message = localize { type = 'variable', key = 'a_xmult', vars = { card.ability.current_mult } },
@@ -121,7 +124,7 @@ function SMODS.INIT.Idnex()
             label = 'idnex',
             name = 'idnex',
             text = {
-                '{C:attention}Duplicate at end of round{}',
+                'Duplicates at end of round',
                 '{C:inactive}(Must have room){}',
                 '{C:inactive}(Removes negative from the copy){}'
             }
