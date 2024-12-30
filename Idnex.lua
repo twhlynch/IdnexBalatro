@@ -66,6 +66,9 @@ function SMODS.INIT.Idnex()
                 for _, another_joker in ipairs(G.jokers.cards) do
                     if not another_joker.ability.idnex_sticker and not another_joker.ability.is_idnex_joker then
                         Sticker:apply(another_joker, true)
+                        card_eval_status_text(another_joker, "extra", nil, nil, nil,
+                            { message = "idnex", colour = HEX("00FFFF") }
+						)
                     end
                 end
             end
@@ -140,11 +143,19 @@ function SMODS.INIT.Idnex()
                             local copy = copy_card(card)
                             copy:add_to_deck()
                             G.jokers:emplace(copy)
+                            card_eval_status_text(copy, "extra", nil, nil, nil,
+                                { message = "copy", colour = HEX("00FFFF") }
+                            )
                             Sticker:apply(copy, false)
                             if copy.edition and copy.edition.negative then
                                 copy:set_edition({ negative = false })
                             end
                             copy:start_materialize()
+                            
+                        else
+                            card_eval_status_text(card, "extra", nil, nil, nil,
+                                { message = "no room", colour = HEX("00FFFF") }
+                            )
                         end
                         return true
                     end
