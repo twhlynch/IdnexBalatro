@@ -122,7 +122,7 @@ function SMODS.INIT.Idnex()
         key = "idnex_sticker",
         loc_txt = {
             label = 'idnex',
-            name = 'idnex',
+            name = 'idnex sticker',
             text = {
                 'Duplicates at end of round',
                 '{C:inactive}(Must have room){}',
